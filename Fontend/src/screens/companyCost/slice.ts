@@ -20,7 +20,6 @@ export const getCategorysTreeAction = createAsyncThunk(
   async (filter: any, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoadingAction(true));
-      // const state = thunkAPI.getState() as RootState;
       const response: any = await getCategoriesTree(defaultFilter({...filter}));
       thunkAPI.dispatch(setLoadingAction(false));
       
