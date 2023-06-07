@@ -3,9 +3,11 @@ import { AppService } from './app.service';
 import { ConfigModule } from './config/config.module';
 import { AppLoggerMiddleware } from './middleware/apploggermiddleware';
 import { RouteModule } from './route.module';
+import { MongoDbModule } from './module/mongodb/mongodb.module';
+import { CatModule } from './module/cat/cat.module';
 
 @Module({
-  imports: [ConfigModule, RouteModule],
+  imports: [MongoDbModule, ConfigModule, RouteModule, CatModule],
   controllers: [],
   providers: [AppService],
 })
